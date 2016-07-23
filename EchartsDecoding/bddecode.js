@@ -65,7 +65,7 @@ function doDecode(){
 		console.log("Decoding: "+files[i]);
 		var data=fs.readFileSync("json/"+files[i],"utf-8");
 		var dd = decode(JSON.parse(data));
-		fs.writeFileSync("jsondecode/"+files[i],JSON.stringify(dd),"utf-8");
+		fs.writeFileSync("jsondecode/"+files[i].split(".")[0]+".geojson",JSON.stringify(dd),"utf-8");
 	}
 }
 
