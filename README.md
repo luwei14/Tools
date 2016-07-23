@@ -1,7 +1,7 @@
 # Tools
 Repositories for some useful tools in daily working.
 
-## [Echarts Decoding](https://github.com/luwei14/Tools/tree/master/EchartsDecoding])
+## [Echarts Decoding](https://github.com/luwei14/Tools/tree/master/EchartsDecoding)
 Echarts map data is encoded for compression of data volume. This source provide the download links for the map data and extract the decoding codes from echarts sources.
 
 ## Convert Esri JSON to GeoJSON

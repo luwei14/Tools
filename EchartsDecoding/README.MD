@@ -2,7 +2,7 @@
 
 > Fetch and decode the [map data](http://echarts.baidu.com/download-map.html) used by [Echarts](http://echarts.baidu.com/). Because the map data from Echarts is compressed with zizag coding. It should be decoded when use it outside Echarts library.
 
-> 现在并解码[Echarts](http://echarts.baidu.com/)的[地图数据](http://echarts.baidu.com/download-map.html). Echarts地图数据是经过压缩的，在Echarts之外使用该地图数据需要解压缩处理。
+> 下载并解码[Echarts](http://echarts.baidu.com/)的[地图数据](http://echarts.baidu.com/download-map.html). Echarts地图数据是经过压缩的，在Echarts之外使用该地图数据需要解压缩处理。
 
 ## Dependence
 > Node is need to run decoding functions.
