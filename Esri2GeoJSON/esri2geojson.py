@@ -1,7 +1,5 @@
 #coding=utf-8
 import json
-import os
-import codecs
 
 def esri2GeoJSON(esrijson):
     GeoJSON = {}
@@ -24,8 +22,7 @@ def esri2GeoJSON(esrijson):
         feature["properties"] = esrifeature["attributes"]
         features.append(feature)
     GeoJSON["features"] = features
-    return features
-    return json.dumps(GeoJSON, indent=2, ensure_ascii=False)
+    return json.dumps(GeoJSON,ensure_ascii=False)
 
 def getGeometryType(geometry, esriType):
     if esriType == "esriGeometryPoint":
@@ -51,26 +48,3 @@ def getEsriCoordinates(geometry,geometryType):
         return [geometry["x"],geometry["y"]]
     else:
         return []
-
-def road2geojson():
-    files = os.listdir("data/roadnow/")
-    GeoJSON = {}
-    GeoJSON["type"] = "FeatureCollection"
-    GeoJSON["features"] = []
-    for file in files:
-        print file
-        fp = open("data/roadnow/%s" % file)
-        sgeo = esri2GeoJSON(fp.read())
-        GeoJSON["features"].extend(sgeo)
-        fp.close()
-        #fname,sfix = file.split(".")
-        #fp = codecs.open("data/roadnowgeo/%s.geojson" % fname,"w","utf-8")
-        #fp.write(sgeo)
-        #fp.close()
-    fp = codecs.open("data/whroad.geojson","w","utf-8")
-    fp.write(json.dumps(GeoJSON))
-    fp.close()
-    
-if __name__=="__main__":
-    print "Main"
-    road2geojson()
