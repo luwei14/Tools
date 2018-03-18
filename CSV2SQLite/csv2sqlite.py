@@ -44,7 +44,10 @@ if __name__ == "__main__":
 				cur.execute(sql, row.values())
 			except sqlite3.IntegrityError, e:
 				pass
-			row = next(reader)
+			try:
+				row = next(reader)
+			except:
+				break
 			k += 1
 			sys.stdout.write("\r {} records complete...".format(k))
 			sys.stdout.flush()
